@@ -1,9 +1,13 @@
-import Image from 'next/image'
+import AboutArea from '@containers/main/AboutArea'
+import CourseArea from '@containers/main/CourseArea'
+import HeroArea from '@containers/main/HeroArea'
 
 export default function Home() {
   return (
     <>
-      <div className="w-full text-blue-600">안녕</div>
+      <HeroArea />
+      <AboutArea />
+      <CourseArea />
     </>
   )
 }
