@@ -28,7 +28,9 @@
       "@hooks": ["hooks"],
       "@layout/*": ["layouts/*"],
       "@ui/*": ["components/ui/*"],
-      "@utils/*": ["utils/*"]
+      "@utils/*": ["utils/*"],
+      "@lib/*": ["lib/*"],
+      "@models/*": ["models/*"]
     }
   },
   "include": [

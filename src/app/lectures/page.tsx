@@ -2,8 +2,6 @@
 
 import Chapter from '@components/lectures/chapter/Chapter'
 import CSText from '@components/ui/text/CSText'
-import { isEmpty } from 'lodash'
-import { Dispatch, SetStateAction, useState } from 'react'
 
 const Lectures = () => {
   return (
