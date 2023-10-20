@@ -1,8 +1,9 @@
+import Section from '@components/ui/section/Section'
 import CSText from '@components/ui/text/CSText'
 
 const AboutArea = () => {
   return (
-    <section className="flex w-full justify-center bg-inherit px-[1rem] py-[2rem]">
+    <Section>
       <div className="container grid items-center gap-[2rem] lg:grid-cols-2 lg:gap-7">
         <div className="order-2 lg:order-1 lg:max-w-[500px]">
           <CSText
@@ -24,18 +25,16 @@ const AboutArea = () => {
               Digital Literacy 수업을 통해 인터넷을 효과적으로 탐색하는 데 필요한 기술을 습득할 수 있습니다.`}
           </CSText>
         </div>
-        <div className="relative z-10 order-1 lg:order-2">
+        <div className="relative order-1 lg:order-2">
           <img
             src={'images/digital-literacy-1.png'}
             alt={'digital-literacy-1'}
-            width={570}
-            height={360}
             loading="lazy"
-            className="rounded"
+            className="h-auto w-full rounded"
           />
         </div>
       </div>
-    </section>
+    </Section>
   )
 }
 

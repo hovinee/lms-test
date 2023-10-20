@@ -9,6 +9,9 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@tanstack/react-query": "^4.29.25",
+    "@tanstack/react-query-devtools": "^5.0.0",
+    "@tanstack/react-query-next-experimental": "^5.0.0",
     "@types/bcrypt": "^5.0.0",
     "@types/lodash": "^4.14.199",
     "@uppy/core": "^3.5.1",
