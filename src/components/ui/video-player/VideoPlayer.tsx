@@ -1,6 +1,6 @@
 'use client'
 
-import * as React from 'react'
+import { useState, useRef, useEffect } from 'react'
 import videojs from 'video.js'
 
 // Styles
@@ -8,6 +8,7 @@ import 'video.js/dist/video-js.css'
 
 interface IVideoPlayerProps {
   options: videojs.PlayerOptions
+  id: number
 }
 
 const initialOptions: videojs.PlayerOptions = {
@@ -20,20 +21,35 @@ const initialOptions: videojs.PlayerOptions = {
   },
 }
 
-const VideoPlayer: React.FC<IVideoPlayerProps> = ({ options }) => {
-  const videoNode = React.useRef<HTMLVideoElement>()
-  const player = React.useRef<videojs.Player>()
+const VideoPlayer: React.FC<IVideoPlayerProps> = ({ options, id }) => {
+  const videoNode = useRef<HTMLVideoElement>(null)
+  const player = useRef<videojs.Player>()
+  const [currentTime, setCurrentTime] = useState<number>(0)
 
-  React.useEffect(() => {
-    player.current = videojs(videoNode.current, {
-      ...initialOptions,
-      ...options,
-    }).ready(function () {
-      console.log('onPlayerReady')
-    })
-    return () => {
-      if (player.current) {
-        player.current.dispose()
+  useEffect(() => {
+    if (videoNode.current) {
+      player.current = videojs(videoNode.current, {
+        ...initialOptions,
+        ...options,
+      }).ready(function () {
+        const myPlayer = this
+        myPlayer.on('timeupdate', function () {
+          //페이지 route시 저장 TODO:db 폴링 찾아보기
+          localStorage.setItem(`video${[id]}`, String(myPlayer.currentTime()))
+
+          //페이지 leave시 저장
+          window.onunload = function () {
+            localStorage.setItem(`video${[id]}`, String(myPlayer.currentTime()))
+          }
+        })
+        if (localStorage.getItem(`video${[id]}`))
+          myPlayer.currentTime(Number(localStorage.getItem(`video${[id]}`)))
+      })
+
+      return () => {
+        if (player.current) {
+          player.current.dispose()
+        }
       }
     }
   }, [options])

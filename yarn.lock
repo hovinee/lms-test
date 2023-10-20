@@ -391,6 +391,36 @@
   dependencies:
     tslib "^2.4.0"
 
+"@tanstack/query-core@4.29.25":
+  version "4.29.25"
+  resolved "https://registry.yarnpkg.com/@tanstack/query-core/-/query-core-4.29.25.tgz#605d357968a740544af6754004eed1dfd4587cb8"
+  integrity sha512-DI4y4VC6Uw4wlTpOocEXDky69xeOScME1ezLKsj+hOk7DguC9fkqXtp6Hn39BVb9y0b5IBrY67q6kIX623Zj4Q==
+
+"@tanstack/query-devtools@5.0.0":
+  version "5.0.0"
+  resolved "https://registry.npmjs.org/@tanstack/query-devtools/-/query-devtools-5.0.0.tgz"
+  integrity sha512-WATg9+nreAmtTRHzxvCFN6j4ucUVbkJNd8ErcYmf7Y6GsJw/BGscd4rWS7cdAP7zfTcPjHjGaRB041pcv8dNvA==
+
+"@tanstack/react-query-devtools@^5.0.0":
+  version "5.0.0"
+  resolved "https://registry.npmjs.org/@tanstack/react-query-devtools/-/react-query-devtools-5.0.0.tgz"
+  integrity sha512-4yw29d89eOqUmliRKGmEOjuq2AGSM3i4jjw/YFMrErg0neVITy2bkoU3fPXZ339czlupqq0b4e20uFVtqkEqGQ==
+  dependencies:
+    "@tanstack/query-devtools" "5.0.0"
+
+"@tanstack/react-query-next-experimental@^5.0.0":
+  version "5.0.0"
+  resolved "https://registry.yarnpkg.com/@tanstack/react-query-next-experimental/-/react-query-next-experimental-5.0.0.tgz#33d0bc492b6be672915422524f8d9e3f5a589a5c"
+  integrity sha512-yzezF0Vihl4a1zpHNhYm7HdxuMupEOnu3zJuyEZTg+I8ohpoS75hAtEDJ55fhsYXtpx2AOZFFwN412F3Sm4+qQ==
+
+"@tanstack/react-query@^4.29.25":
+  version "4.29.25"
+  resolved "https://registry.yarnpkg.com/@tanstack/react-query/-/react-query-4.29.25.tgz#64df3260b65760fbd3c81ffae23b7b3802c71aa6"
+  integrity sha512-c1+Ezu+XboYrdAMdusK2fTdRqXPMgPAnyoTrzHOZQqr8Hqz6PNvV9DSKl8agUo6nXX4np7fdWabIprt+838dLg==
+  dependencies:
+    "@tanstack/query-core" "4.29.25"
+    use-sync-external-store "^1.2.0"
+
 "@transloadit/prettier-bytes@0.0.7":
   version "0.0.7"
   resolved "https://registry.npmjs.org/@transloadit/prettier-bytes/-/prettier-bytes-0.0.7.tgz"
@@ -451,7 +481,7 @@
 
 "@types/video.js@^7.3.53":
   version "7.3.53"
-  resolved "https://registry.yarnpkg.com/@types/video.js/-/video.js-7.3.53.tgz#5d102edb60795e6986e496e76f9ec3b482654e50"
+  resolved "https://registry.npmjs.org/@types/video.js/-/video.js-7.3.53.tgz"
   integrity sha512-pE3ozDRXEPs9ZC401IhN3XWDihJs2GUzEZVu/qq8IfryOIvg2U1i9LExo16y9FdP2ZV2WnZhM4klb+lP03PpeQ==
 
 "@types/webidl-conversions@*":
@@ -3680,6 +3710,11 @@ url-toolkit@^2.1.1, url-toolkit@^2.1.3:
   version "2.2.5"
   resolved "https://registry.npmjs.org/url-toolkit/-/url-toolkit-2.2.5.tgz"
   integrity sha512-mtN6xk+Nac+oyJ/PrI7tzfmomRVNFIWKUbG8jdYFt52hxbiReFAXIjYskvu64/dvuW71IcB7lV8l0HvZMac6Jg==
+
+use-sync-external-store@^1.2.0:
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/use-sync-external-store/-/use-sync-external-store-1.2.0.tgz#7dbefd6ef3fe4e767a0cf5d7287aacfb5846928a"
+  integrity sha512-eEgnFxGQ1Ife9bzYs6VLi8/4X6CObHMw9Qr9tPY43iKwsPw8xE8+EFsf/2cFZ5S3esXgpWgtSCtLNS41F+sKPA==
 
 util-deprecate@^1.0.1, util-deprecate@^1.0.2:
   version "1.0.2"

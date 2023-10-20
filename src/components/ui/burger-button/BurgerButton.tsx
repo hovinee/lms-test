@@ -5,7 +5,8 @@ type TProps = {
 }
 
 const BurgerButton = ({ className, onClick, label }: TProps) => {
-  const baseClass = 'relative block overflow-hidden w-6 h-0.5 bg-black'
+  const baseClass =
+    'relative block overflow-hidden w-[24px] h-0.5 bg-black bg-opacity-50'
 
   return (
     <button

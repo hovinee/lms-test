@@ -7,10 +7,9 @@ import { useState } from 'react'
 
 const Header = () => {
   const [sideBar, setSideBar] = useState<boolean>(false)
-  const [offcanvas, setOffcanvas] = useState<boolean>(false)
 
   return (
-    <div className="flex w-full items-center justify-between bg-white px-[24px] py-[16px]">
+    <div className="sticky top-0 z-20 flex h-[56px] w-full items-center justify-between bg-white px-[16px]">
       <Logo />
       <BurgerButton onClick={() => setSideBar(true)} />
       <SideBar sideBar={sideBar} setSideBar={setSideBar} />

@@ -7,7 +7,3 @@ li {
   margin: 0;
   padding: 0;
 }
-
-input {
-  @apply w-[full] border border-gray bg-zinc-100/40 px-6 py-2;
-}

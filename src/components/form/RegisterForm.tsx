@@ -94,27 +94,27 @@ const SignUpForm = () => {
   //   inputRefs.current[index]?.focus()
   // }
   return (
-    <div className="grid h-screen place-items-center">
+    <div className="w-full px-4 py-16">
       <div className="rounded-lg border-t-4 border-green-400 bg-white p-5 shadow-lg">
-        <h1 className="my-4 text-lg font-bold">SignUp</h1>
+        <h1 className="my-4 text-lg font-bold">회원가입</h1>
         <form onSubmit={handleSubmit} className="flex flex-col gap-3">
           <input
             onChange={(e) => setName(e.target.value)}
             type="text"
-            placeholder="Full Name"
+            placeholder="이름"
           />
           <input
             onChange={(e) => setEmail(e.target.value)}
             type="text"
-            placeholder="Email"
+            placeholder="이메일"
           />
           <input
             onChange={(e) => setPassword(e.target.value)}
             type="password"
-            placeholder="Password"
+            placeholder="비밀번호"
           />
-          <button className="cursor-pointer bg-green-600 px-6 py-2 font-bold text-white">
-            Register
+          <button className="cursor-pointer border bg-black bg-green-600 px-6 py-2 font-bold text-white ">
+            회원가입
           </button>
           {error && (
             <div className="mt-2 w-fit rounded-md bg-red-500 px-3 py-1 text-sm text-white">
@@ -123,7 +123,7 @@ const SignUpForm = () => {
           )}
 
           <Link className="mt-3 text-right text-sm" href={'/auth/login'}>
-            Already have an account <span className="underline">Login</span>
+            이미 계정이 있으신가요? <span className="underline">로그인</span>
           </Link>
         </form>
       </div>

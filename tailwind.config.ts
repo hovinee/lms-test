@@ -6,8 +6,14 @@ const config: Config = {
     extend: {
       colors: {
         black: '#000',
+        dark: {
+          DEFAULT: '#333333',
+          50: '#111111',
+          100: '#171621',
+        },
         white: '#fff',
-        gray: '#666666',
+        orange: '#FFA45B',
+        green: '#006E7F',
       },
       fontSize: {
         xs: [

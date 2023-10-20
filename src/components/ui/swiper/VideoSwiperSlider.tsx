@@ -7,8 +7,28 @@ import { Swiper, SwiperSlide } from 'swiper/react'
 import 'swiper/css'
 import 'swiper/css/pagination'
 import VideoPlayer from '../video-player/VideoPlayer'
+import { getVideos } from 'app/page'
+import { useQuery } from '@tanstack/react-query'
+import { useEffect, useState } from 'react'
 
-const VideoSwiperSlider = ({ data }: any) => {
+const VideoSwiperSlider = () => {
+  const [num, setNum] = useState<number>(1000)
+  const { data } = useQuery({
+    queryKey: ['get-video'],
+    queryFn: async () => {
+      //TODO: fucntion 만들기
+      const data = await getVideos()
+      let test = []
+      data.filter((value: any) => {
+        if (value.status.pctComplete === '100.000000') test.push('100')
+      })
+      if (test.length === data.length) setNum(0)
+      return data
+    },
+    refetchInterval: num,
+    refetchIntervalInBackground: true,
+  })
+
   return (
     <>
       <Swiper
@@ -39,7 +59,7 @@ const VideoSwiperSlider = ({ data }: any) => {
               <div className="relative mb-16 h-[10rem] w-full" key={index}>
                 <div>{`추천 강좌: ${value.meta.filename.split('.')[0]}`}</div>
                 {value.status.state === 'ready' ? (
-                  <VideoPlayer options={videoJsOptions} />
+                  <VideoPlayer options={videoJsOptions} id={value.uid} />
                 ) : (
                   <div className="h-full w-full bg-black bg-opacity-50 text-center leading-[10rem]">
                     인코딩 ..

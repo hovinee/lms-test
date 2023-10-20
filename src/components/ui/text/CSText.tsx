@@ -22,6 +22,8 @@ const fontColor: StringProps = {
   black: 'text-black',
   white: 'text-white',
   gray: 'text-gray',
+  orange: 'text-orange',
+  green: 'text-green',
 }
 
 const fontWeight: StringProps = {

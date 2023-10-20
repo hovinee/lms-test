@@ -30,22 +30,22 @@ const SignInForm = () => {
     }
   }
   return (
-    <div className="grid h-screen place-items-center">
-      <div className="rounded-lg border-t-4 border-green-400 bg-white p-5 shadow-lg">
-        <h1 className="my-4 text-lg font-bold">Enter the details</h1>
+    <div className="w-full px-4 py-16">
+      <div className="border-black-400 w-full rounded-lg border-t-4 bg-white p-5 shadow-lg">
+        <h1 className="my-4 text-lg font-bold">로그인</h1>
         <form onSubmit={handleSumit} className="flex flex-col gap-3">
           <input
             onChange={(e) => setEmail(e.target.value)}
             type="text"
-            placeholder="Email"
+            placeholder="이메일"
           />
           <input
             onChange={(e) => setPassword(e.target.value)}
             type="password"
-            placeholder="Password"
+            placeholder="비밀번호"
           />
-          <button className="cursor-pointer bg-green-600 px-6 py-2 font-bold text-white">
-            Login
+          <button className="cursor-pointer border bg-black bg-green-600 px-6 py-2 font-bold text-white ">
+            로그인
           </button>
           {error && (
             <div className="mt-2 w-fit rounded-md bg-red-500 px-3 py-1 text-sm text-white">
@@ -54,7 +54,7 @@ const SignInForm = () => {
           )}
 
           <Link className="mt-3 text-right text-sm" href={'/auth/register'}>
-            Don't have an account? <span className="underline">Register</span>
+            회원이 아니신가요? <span className="underline">회원가입</span>
           </Link>
         </form>
       </div>
