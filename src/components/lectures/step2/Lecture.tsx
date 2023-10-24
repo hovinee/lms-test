@@ -3,9 +3,9 @@
 import { isEmpty } from 'lodash'
 import { useState } from 'react'
 import { Reorder } from 'framer-motion'
-import { Item } from '../lecture/LectureItem'
+import LectureItem from './LectureItem'
 
-const Chapter = () => {
+const Lectures = () => {
   const [items, setItems] = useState<string[]>([])
   const [chapterTitle, setChapterTitle] = useState<string>('')
   const [lectureTitle, setLectureTitle] = useState<string>('')
@@ -34,7 +34,7 @@ const Chapter = () => {
 
   return (
     <>
-      <div className="boder-black mt-8 flex h-20 w-full  items-center justify-between rounded-md border border-black border-opacity-10 px-8">
+      {/* <div className="boder-black mt-8 flex h-20 w-full  items-center justify-between rounded-md border border-black border-opacity-10 px-8">
         {editTitleEnabled ? (
           <input
             onChange={(value) => setChapterTitle(value.currentTarget.value)}
@@ -43,11 +43,11 @@ const Chapter = () => {
           <div>{isEmpty(chapterTitle) ? 'CHAPTER' : chapterTitle}</div>
         )}
         <div onClick={editTitle}>{editTitleEnabled ? '완료' : '수정'}</div>
-      </div>
+      </div> */}
 
       <Reorder.Group axis="y" onReorder={setItems} values={items}>
         {items.map((item, index) => (
-          <Item
+          <LectureItem
             key={item}
             id={index}
             item={item}
@@ -74,12 +74,9 @@ const Chapter = () => {
         >
           + 강의 추가
         </div>
-        <div className="boder-black flex h-16 items-center rounded-md border border-black border-opacity-10 pl-8">
-          + 퀴즈 추가
-        </div>
       </div>
     </>
   )
 }
 
-export default Chapter
+export default Lectures

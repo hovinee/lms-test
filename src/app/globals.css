@@ -2,6 +2,14 @@
 @tailwind components;
 @tailwind utilities;
 
+html {
+  font-size: 62.5%;
+}
+
+div {
+  box-sizing: border-box;
+}
+
 ul,
 li {
   margin: 0;

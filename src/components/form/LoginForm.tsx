@@ -3,6 +3,10 @@ import Link from 'next/link'
 import { useState } from 'react'
 import { signIn } from 'next-auth/react'
 import { useRouter } from 'next/navigation'
+import Section from '@components/ui/section/Section'
+import CSInput from '@components/ui/input/CSInput'
+import CSText from '@components/ui/text/CSText'
+import CSButton from '@components/ui/button/CSButton'
 
 const SignInForm = () => {
   const router = useRouter()
@@ -30,35 +34,59 @@ const SignInForm = () => {
     }
   }
   return (
-    <div className="w-full px-4 py-16">
-      <div className="border-black-400 w-full rounded-lg border-t-4 bg-white p-5 shadow-lg">
-        <h1 className="my-4 text-lg font-bold">로그인</h1>
-        <form onSubmit={handleSumit} className="flex flex-col gap-3">
-          <input
-            onChange={(e) => setEmail(e.target.value)}
-            type="text"
-            placeholder="이메일"
-          />
-          <input
-            onChange={(e) => setPassword(e.target.value)}
-            type="password"
-            placeholder="비밀번호"
-          />
-          <button className="cursor-pointer border bg-black bg-green-600 px-6 py-2 font-bold text-white ">
+    <Section>
+      <CSText size="21" weight="bold" color="171717" className="font-inter">
+        로그인
+      </CSText>
+      <form onSubmit={handleSumit} className="flex flex-col">
+        <CSText
+          size="14"
+          weight="normal"
+          color="171717"
+          className="font-inter mb-[0.9rem] mt-[3.6rem]"
+        >
+          이메일
+        </CSText>
+        <CSInput type="text" setValue={setEmail} />
+        <CSText
+          size="14"
+          weight="normal"
+          color="171717"
+          className="font-inter mb-[0.9rem] mt-[2.7rem]"
+        >
+          비밀번호
+        </CSText>
+        <CSInput type="password" setValue={setPassword} password={true} />
+        <CSText
+          size="12"
+          weight="normal"
+          color="171717"
+          className="mt-[0.6rem] text-right"
+        >
+          비밀번호 찾기
+        </CSText>
+        <CSButton className="mt-[3.1rem]">
+          <CSText size="18" weight="bold" color="white" className="font-inter">
             로그인
-          </button>
-          {error && (
-            <div className="mt-2 w-fit rounded-md bg-red-500 px-3 py-1 text-sm text-white">
-              {error}
-            </div>
-          )}
+          </CSText>
+        </CSButton>
+        {error && (
+          <div className="mt-2 w-fit rounded-md bg-red-500 px-3 py-1 text-sm text-white ">
+            {error}
+          </div>
+        )}
 
-          <Link className="mt-3 text-right text-sm" href={'/auth/register'}>
-            회원이 아니신가요? <span className="underline">회원가입</span>
-          </Link>
-        </form>
-      </div>
-    </div>
+        <Link
+          className="mt-[2.5rem] text-right text-sm"
+          href={'/auth/register'}
+        >
+          <CSText size="14" weight="normal" color="171717">
+            회원이 아니신가요?
+            <span className="underline">회원가입</span>
+          </CSText>
+        </Link>
+      </form>
+    </Section>
   )
 }
 export default SignInForm

@@ -8,7 +8,11 @@ const Register = async () => {
   const session = await getServerSession(authOptions)
   if (session) redirect('/auth/userInfo')
 
-  return <RegisterForm />
+  return (
+    <div className="flex h-[calc(100vh-5.6rem)] w-full items-center">
+      <RegisterForm />
+    </div>
+  )
 }
 
 export default Register

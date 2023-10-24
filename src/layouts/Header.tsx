@@ -9,7 +9,7 @@ const Header = () => {
   const [sideBar, setSideBar] = useState<boolean>(false)
 
   return (
-    <div className="sticky top-0 z-20 flex h-[56px] w-full items-center justify-between bg-white px-[16px]">
+    <div className="sticky top-0 z-20 flex h-[5.6rem] w-full items-center justify-between bg-white px-[1.6rem]">
       <Logo />
       <BurgerButton onClick={() => setSideBar(true)} />
       <SideBar sideBar={sideBar} setSideBar={setSideBar} />

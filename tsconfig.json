@@ -38,7 +38,8 @@
     "**/*.ts",
     "**/*.tsx",
     ".next/types/**/*.ts",
-    ".prettier.conig.ts"
+    ".prettier.conig.ts",
+    "src/components/lectures/step2"
   ],
   "exclude": ["node_modules"]
 }

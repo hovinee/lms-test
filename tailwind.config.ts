@@ -5,45 +5,41 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        black: '#000',
-        dark: {
-          DEFAULT: '#333333',
-          50: '#111111',
-          100: '#171621',
-        },
-        white: '#fff',
-        orange: '#FFA45B',
-        green: '#006E7F',
+        BBBBBB: '#BBBBBB',
+        F2F2F2: '#F2F2F2',
+        '171717': '#171717',
+        ECECEC: '#ECECEC',
+        '565656': '#565656',
+      },
+
+      fontFamily: {
+        // 폰트패밀리
+        roboto: ['var(--roboto)'], // 다음과 같이 배열 안에 string으로 작성합니다.
+        inter: ['var(--inter)'], // 다음과 같이 배열 안에 string으로 작성합니다.
       },
       fontSize: {
-        xs: [
-          '12px',
+        '12': [
+          '1.2rem',
           {
-            lineHeight: '18px',
+            lineHeight: '1.6rem',
           },
         ],
-        sm: [
-          '14px',
+        '14': [
+          '1.4rem',
           {
-            lineHeight: '22px',
+            lineHeight: '1.907rem',
           },
         ],
-        base: [
-          '16px',
+        '18': [
+          '1.8rem',
           {
-            lineHeight: '22px',
+            lineHeight: '2.178rem',
           },
         ],
-        lg: [
-          '18px',
+        '21': [
+          '2.1rem',
           {
-            lineHeight: '24px',
-          },
-        ],
-        xl: [
-          '28px',
-          {
-            lineHeight: '40px',
+            lineHeight: '2.724rem',
           },
         ],
       },

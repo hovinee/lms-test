@@ -4,12 +4,12 @@ import SwiperSlider from '@ui/swiper/SwiperSlider'
 
 const CourseArea = () => {
   return (
-    <Section>
+    <Section className="mt-[2.1rem]">
       <CSText
-        size={'lg'}
+        size={'14'}
         color={'gray'}
         weight={'bold'}
-        className={'mb-[16px]'}
+        className={'mb-[1.6rem]'}
       >
         {'디지털 리터러시 강의'}
       </CSText>

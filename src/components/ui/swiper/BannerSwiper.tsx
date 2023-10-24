@@ -56,7 +56,7 @@ const BannerSwiper = () => {
     >
       {courses.map((course, index) => (
         <SwiperSlide key={index}>
-          <div className="relative h-[210px] w-full">
+          <div className="relative w-full">
             <motion.div
               initial={{ scale: 1 }}
               animate={{ scale: slideIndex === index ? 1.1 : 1 }}
@@ -65,16 +65,16 @@ const BannerSwiper = () => {
               <motion.img
                 src={course.src}
                 alt={'digital-literacy'}
-                className="h-[210px] w-full object-cover"
+                className="h-[22rem] w-full object-cover"
               />
             </motion.div>
             <div className="text-wh absolute bottom-0 left-0 right-0 top-0 flex flex-col items-center justify-center bg-black bg-opacity-20">
-              <CSText weight={'bold'} size={'lg'} color={'white'}>
+              <CSText weight={'bold'} size={'21'} color={'white'}>
                 {course.title}
               </CSText>
               <CSText
                 weight={'normal'}
-                size={'md'}
+                size={'14'}
                 color={'white'}
                 className="text-center"
               >

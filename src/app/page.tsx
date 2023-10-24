@@ -1,11 +1,10 @@
-import AboutArea from '@containers/about/AboutArea'
-import CourseArea from '@containers/course/CourseArea'
-import HeroArea from '@containers/hero/HeroArea'
-import LecturesArea from '@containers/lectures/LecturesArea'
+import AboutArea from '@containers/main/AboutArea'
+import CourseArea from '@containers/main/CourseArea'
+import HeroArea from '@containers/main/HeroArea'
 import getQueryClient from '@utils/getQueryClients'
 import { dehydrate } from '@tanstack/query-core'
 import Hydrate from '@utils/hydrate.client'
-import Line from '@components/ui/line/Line'
+import TodayCourseArea from '@containers/main/TodayLecturesArea'
 
 export async function getVideos() {
   const CLOUDFLARE_API_TOKEN = 'YkoSyEjEBomP4E4aT4GpkUjD4G_YZ3yXe2YjBLzD'
@@ -25,6 +24,10 @@ export async function getVideos() {
   return result
 }
 
+export const cls = (...classnames: string[]) => {
+  return classnames.join(' ')
+}
+
 export default async function Home() {
   const queryClient = getQueryClient()
   await queryClient.prefetchQuery(['get-video'], getVideos)
@@ -33,10 +36,9 @@ export default async function Home() {
     <>
       <HeroArea />
       <AboutArea />
-      <Line />
       <CourseArea />
       <Hydrate state={dehydratedState}>
-        <LecturesArea />
+        <TodayCourseArea />
       </Hydrate>
     </>
   )
