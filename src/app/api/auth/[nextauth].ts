@@ -40,9 +40,6 @@ export const authOptions: AuthOptions = {
     maxAge: 30 * 24 * 60 * 60, // 30일(30 * 24 * 60 * 60 초), 세션 유효 기간
   },
   secret: process.env.NEXTAUTH_SECRET,
-  pages: {
-    signIn: '/auth/login',
-  },
 }
 
 const handler = NextAuth(authOptions)
