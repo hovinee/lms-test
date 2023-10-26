@@ -1,8 +1,8 @@
 import NextAuth, { AuthOptions } from 'next-auth'
 import CredentialsProvider from 'next-auth/providers/credentials'
 import bcrypt from 'bcrypt'
-import User from '@models/user'
 import { connectMongoDB } from '@lib/mongodb'
+import { User } from '@models/user'
 
 export const authOptions: AuthOptions = {
   providers: [
@@ -21,14 +21,15 @@ export const authOptions: AuthOptions = {
             return null
           }
 
-          const paswwordMatch = await bcrypt.compare(password, user.password)
+          const passwordMatch = await bcrypt.compare(password, user.password)
 
-          if (!paswwordMatch) {
+          if (!passwordMatch) {
             return null
           }
-          return user
+          return user.toObject()
         } catch (error) {
           console.log('Error: ', error)
+          return null
         }
       },
     }),
@@ -40,7 +41,7 @@ export const authOptions: AuthOptions = {
   },
   secret: process.env.NEXTAUTH_SECRET,
   pages: {
-    signIn: '/',
+    signIn: '/auth/login',
   },
 }
 
