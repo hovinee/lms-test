@@ -2,8 +2,8 @@ import NextAuth, { AuthOptions } from 'next-auth'
 import CredentialsProvider from 'next-auth/providers/credentials'
 import bcrypt from 'bcrypt'
 import { connectMongoDB } from '@lib/mongodb'
-import User from '@models/user'
 import Database from '@utils/database'
+import User from '@models/user'
 
 export const authOptions: AuthOptions = {
   providers: [

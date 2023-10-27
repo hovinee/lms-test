@@ -43,5 +43,7 @@ const userSchema = new Schema<UserModel>(
 
 userSchema.index({ email: 1 })
 
-export const User =
+const User =
   models.user || mongoose.model<UserModel>('user', userSchema, 'user')
+
+export default User
