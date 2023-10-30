@@ -1,4 +1,4 @@
-import { User } from '@models/user'
+import User from '@models/user'
 import Database from '@utils/database'
 
 export const findUserByEmail = async (email: string) => {
