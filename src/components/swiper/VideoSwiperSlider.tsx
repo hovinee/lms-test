@@ -6,17 +6,17 @@ import { Swiper, SwiperSlide } from 'swiper/react'
 // Import Swiper styles
 import 'swiper/css'
 import 'swiper/css/pagination'
-import VideoPlayer from '../video-player/VideoPlayer'
-import { getVideos } from 'app/page'
+import VideoPlayer from '../ui/video-player/VideoPlayer'
 import { useQuery } from '@tanstack/react-query'
 import { useEffect, useState } from 'react'
+import { getVideos } from 'app/my-course/[slug]/page'
 
 const VideoSwiperSlider = () => {
   const [num, setNum] = useState<number>(1000)
   const { data } = useQuery({
     queryKey: ['get-video'],
     queryFn: async () => {
-      //TODO: fucntion 만들기
+      //TODO: fucntion 만들기 업데이트 현황 불러오기
       const data = await getVideos()
       let test = []
       data.filter((value: any) => {

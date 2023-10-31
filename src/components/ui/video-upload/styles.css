@@ -1,0 +1,20 @@
+#drag-drop-area .uppy-Root .uppy-DragDrop-inner {
+  height: 9rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#drag-drop-area .uppy-Root .uppy-DragDrop-inner .uppy-DragDrop-label {
+  font-family: 'Noto Sans';
+  margin: 0;
+}
+
+#drag-drop-area .uppy-Root .uppy-DragDrop-inner .uppy-DragDrop-arrow {
+  display: none;
+}
+
+.for-ProgressBar .uppy-Root .uppy-ProgressBar .uppy-ProgressBar-inner {
+  background-color: black;
+  box-shadow: none;
+}

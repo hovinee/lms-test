@@ -10,14 +10,31 @@ const config: Config = {
         '171717': '#171717',
         ECECEC: '#ECECEC',
         '565656': '#565656',
+        A0A0A0: '#A0A0A0',
+        '707070': '#707070',
+        D9D9D9: '#D9D9D9',
+        '515151': '#515151',
+        C1C1C1: '#C1C1C1',
       },
 
       fontFamily: {
         // 폰트패밀리
-        roboto: ['var(--roboto)'], // 다음과 같이 배열 안에 string으로 작성합니다.
-        inter: ['var(--inter)'], // 다음과 같이 배열 안에 string으로 작성합니다.
+        roboto: ['var(--roboto)'],
+        inter: ['var(--inter)'],
       },
       fontSize: {
+        '10': [
+          '1rem',
+          {
+            lineHeight: '1.498rem',
+          },
+        ],
+        '11': [
+          '1.1rem',
+          {
+            lineHeight: '1.498rem',
+          },
+        ],
         '12': [
           '1.2rem',
           {
@@ -28,6 +45,18 @@ const config: Config = {
           '1.4rem',
           {
             lineHeight: '1.907rem',
+          },
+        ],
+        '15': [
+          '1.5rem',
+          {
+            lineHeight: '2.43rem',
+          },
+        ],
+        '16': [
+          '1.6rem',
+          {
+            lineHeight: '2.179rem',
           },
         ],
         '18': [

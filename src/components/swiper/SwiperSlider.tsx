@@ -10,9 +10,9 @@ import 'swiper/css/pagination'
 // import required modules
 import { Pagination } from 'swiper/modules'
 import './style.css'
-import CSText from '../text/CSText'
+import CSText from '../ui/text/CSText'
 import Link from 'next/link'
-import AutoSizeImage from '../auto-size-image/AutoSizeImage'
+import AutoSizeImage from '../ui/auto-size-image/AutoSizeImage'
 
 const courses = [
   { title: '디지털 리터러시란?' },

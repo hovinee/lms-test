@@ -1,4 +1,5 @@
 'use client'
+
 import Link from 'next/link'
 import { useState } from 'react'
 import { signIn } from 'next-auth/react'
@@ -43,7 +44,7 @@ const SignInForm = () => {
           size="14"
           weight="normal"
           color="171717"
-          className="font-inter mb-[0.9rem] mt-[3.6rem]"
+          className="mb-[0.9rem] mt-[3.6rem] font-inter"
         >
           이메일
         </CSText>
@@ -52,7 +53,7 @@ const SignInForm = () => {
           size="14"
           weight="normal"
           color="171717"
-          className="font-inter mb-[0.9rem] mt-[2.7rem]"
+          className="mb-[0.9rem] mt-[2.7rem] font-inter"
         >
           비밀번호
         </CSText>

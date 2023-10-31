@@ -9,8 +9,12 @@ interface Props {
 
 const MenuMyCourse = ({ setSideBar }: Props) => {
   const myCourse = [
-    { title: '내강의', src: '/images/book.png', link: '/my-lectures' },
-    { title: '운영강좌', src: '/images/media_video.png', link: '/my-course' },
+    { title: '내강의', src: '/images/book.png', link: '/my-course' },
+    {
+      title: '운영강좌',
+      src: '/images/media_video.png',
+      link: '/manage-course',
+    },
   ]
 
   return (

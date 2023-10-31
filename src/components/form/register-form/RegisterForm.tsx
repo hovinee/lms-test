@@ -98,8 +98,9 @@ const SignUpForm = () => {
   // const handleFocus = (index: number) => {
   //   inputRefs.current[index]?.focus()
   // }
+
   return (
-    <Section>
+    <Section className="py-[7rem]">
       <CSText size="21" weight="bold" color="171717" className="font-inter">
         회원가입
       </CSText>

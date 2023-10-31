@@ -1,4 +1,4 @@
-import BannerSwiper from '@components/ui/swiper/BannerSwiper'
+import BannerSwiper from '@components/swiper/BannerSwiper'
 
 const HeroArea = () => {
   return <BannerSwiper />

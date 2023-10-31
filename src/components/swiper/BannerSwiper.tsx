@@ -11,7 +11,7 @@ import 'swiper/css/pagination'
 import { Pagination, Autoplay } from 'swiper/modules'
 import './style.css'
 import Image from 'next/image'
-import CSText from '../text/CSText'
+import CSText from '../ui/text/CSText'
 import { motion } from 'framer-motion'
 import { useState } from 'react'
 
