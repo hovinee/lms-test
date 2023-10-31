@@ -11,13 +11,16 @@ export const postRegister = async (reqData: UserModel): Promise<Response> => {
 export const postValidationCode = async (email: string): Promise<Response> => {
   return await fetch(`${getBaseUrl}/api/auth/code`, {
     method: 'POST',
-    body: email,
+    body: JSON.stringify(email),
   })
 }
 
-export const postVerify = async (email: string): Promise<Response> => {
+export const postVerify = async (
+  email: string,
+  code: number,
+): Promise<Response> => {
   return await fetch(`${getBaseUrl}/api/auth/verify`, {
     method: 'POST',
-    body: email,
+    body: JSON.stringify({ email: email, code: code }),
   })
 }

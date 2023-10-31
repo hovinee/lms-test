@@ -1,0 +1,51 @@
+@startuml
+skinparam BoxPadding 10
+
+actor client
+
+box app
+participant SignUp.tsx
+end box
+
+box api
+participant index.ts
+participant route.ts
+end box
+
+box controller
+participant userController.ts
+end box
+
+box services
+participant UserService.ts
+participant MailService.ts
+end box
+
+
+database mongo
+== try to get validation code ==
+client -> SignUp.tsx: submit
+SignUp.tsx -> index.ts: postValidationCode(email)
+index.ts --> route.ts: request
+route.ts -> userController.ts: sendValidationCodeToUser
+userController.ts -> UserService.ts: findUserByEmail
+UserService.ts --> mongo: query
+mongo --> UserService.ts: result
+UserService.ts -> userController.ts: result
+
+alt user exist
+    userController.ts --> route.ts: send result 1001
+    route.ts --> index.ts: send result 1001
+    index.ts --> SignUp.tsx: send result 1001
+else user already verified
+    userController.ts --> route.ts: send result 1200
+    route.ts --> index.ts: send result 1200
+    index.ts --> SignUp.tsx: send result 1200
+else
+    userController.ts --> MailService.ts: send
+    userController.ts --> route.ts: send result 1000
+    route.ts --> index.ts: send result 1000
+    index.ts --> SignUp.tsx: send result 1000
+end
+
+@enduml

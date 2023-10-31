@@ -1,7 +1,7 @@
 import { NextResponse } from 'next/server'
 
 class ResponseHelper {
-  static success(data: any, status: number = 200, result: number = 1000) {
+  static success(data: any = '', status: number = 200, result: number = 1000) {
     return NextResponse.json({ result: result, ...data }, { status })
   }
 
