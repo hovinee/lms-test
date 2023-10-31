@@ -18,7 +18,7 @@ export const registerUser = async (req: NextRequest) => {
   try {
     const reqData = await getJsonData(req)
 
-    if (reqData == null) return ResponseHelper.error('invalid json format')
+    if (!reqData) return ResponseHelper.error('invalid json format')
 
     const newUser: UserModel = reqData
     // 인풋 정보가 스키마를 위반한 경우.
@@ -38,7 +38,7 @@ export const registerUser = async (req: NextRequest) => {
       )
     else insertUser(newUser)
 
-    return ResponseHelper.success({ data: newUser })
+    return ResponseHelper.success()
   } catch (err: any) {
     console.log(err.message)
     return ResponseHelper.internalError(err.message)
@@ -47,8 +47,8 @@ export const registerUser = async (req: NextRequest) => {
 
 export const sendValidationCodeToUser = async (req: NextRequest) => {
   try {
-    const reqData = await req.text()
-    if (reqData.length == 0) return ResponseHelper.error('invalid input data')
+    const reqData = await getJsonData(req)
+    if (!reqData) return ResponseHelper.error('invalid input data')
 
     const email = reqData
     const user: UserModel = await findUserByEmail(email)
@@ -62,7 +62,7 @@ export const sendValidationCodeToUser = async (req: NextRequest) => {
     const validationCode = Math.floor(Math.random() * (9999 - 1000 + 1)) + 1000
     await User.findOneAndUpdate({ email: email }, { validationCode })
     sendValidationMailTo(email, validationCode)
-    return ResponseHelper.success({ data: validationCode })
+    return ResponseHelper.success()
   } catch (err: any) {
     console.log(err.message)
     return ResponseHelper.internalError(err.message)
@@ -71,21 +71,26 @@ export const sendValidationCodeToUser = async (req: NextRequest) => {
 
 export const verifyUser = async (req: NextRequest) => {
   try {
-    const reqData = await req.text()
-    if (reqData.length == 0) return ResponseHelper.error('invalid input data')
+    const reqData = await getJsonData(req)
+    if (!reqData) return ResponseHelper.error('invalid input data')
 
-    const email = reqData
+    const { email, code } = reqData
     const user: UserModel = await findUserByEmail(email)
 
     // 유저 등록이 안 된 경우.
     if (!user) return ResponseHelper.error('not found user')
+
+    if (code != user.validationCode) {
+      return ResponseHelper.error('no matched code')
+    }
 
     const verifiedUser = await User.findOneAndUpdate(
       { email: email },
       { isVerified: true },
       { new: true },
     )
-    return ResponseHelper.success({ data: verifiedUser })
+    console.log(verifiedUser)
+    return ResponseHelper.success()
   } catch (err: any) {
     console.log(err.message)
     return ResponseHelper.internalError(err.message)
