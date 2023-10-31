@@ -1,6 +1,6 @@
 import Section from '@components/ui/section/Section'
 import CSText from '@components/ui/text/CSText'
-import SwiperSlider from '@ui/swiper/SwiperSlider'
+import SwiperSlider from '@components/swiper/SwiperSlider'
 
 const CourseArea = () => {
   return (

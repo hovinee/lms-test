@@ -1,7 +1,7 @@
 'use client'
 
 import { useState, useRef, useEffect } from 'react'
-import videojs from 'video.js'
+import videojs, { VideoJsPlayer, VideoJsPlayerOptions } from 'video.js'
 
 // Styles
 import 'video.js/dist/video-js.css'
@@ -21,6 +21,10 @@ const initialOptions: videojs.PlayerOptions = {
   },
 }
 
+interface VjsProps {
+  options: VideoJsPlayerOptions
+  onReady?: (player: VideoJsPlayer) => void
+}
 const VideoPlayer: React.FC<IVideoPlayerProps> = ({ options, id }) => {
   const videoNode = useRef<HTMLVideoElement>(null)
   const player = useRef<videojs.Player>()

@@ -1,5 +1,5 @@
 import CSText from '@components/ui/text/CSText'
-import VideoSwiperSlider from '@components/ui/swiper/VideoSwiperSlider'
+import VideoSwiperSlider from '@components/swiper/VideoSwiperSlider'
 import Section from '@components/ui/section/Section'
 import Image from 'next/image'
 
@@ -24,7 +24,7 @@ const TodayCourseArea = () => {
         weight={'normal'}
         className="mt-[0.9rem]"
       >
-        {'추천 강좌: 심리상점 전 알아야 할 것'}
+        {'추천 강좌: 심리상담 전 알아야 할 것'}
       </CSText>
 
       {/* <VideoSwiperSlider/> */}
