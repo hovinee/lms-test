@@ -1,0 +1,50 @@
+@startuml
+skinparam BoxPadding 10
+
+actor client
+
+box app
+participant SignUp.tsx
+end box
+
+box api
+participant index.ts
+participant route.ts
+end box
+
+box controller
+participant userController.ts
+end box
+
+box services
+participant UserService.ts
+end box
+
+
+database mongo
+== try to signup ==
+client -> SignUp.tsx: submit
+SignUp.tsx -> index.ts: postRegister(UserModel)
+index.ts --> route.ts: request
+route.ts -> userController.ts: regitserUser
+userController.ts -> UserService.ts: findUserByEmail
+UserService.ts --> mongo: query
+mongo --> UserService.ts: result
+UserService.ts -> userController.ts: result
+
+alt user exist
+    userController.ts --> route.ts: send result 101
+    route.ts --> index.ts: send result 101
+    index.ts --> SignUp.tsx: send result 101
+else user verification required
+    userController.ts --> route.ts: send result 102
+    route.ts --> index.ts: send result 102
+    index.ts --> SignUp.tsx: send result 102
+else
+    userController.ts --> mongo: save()
+    userController.ts --> route.ts: send result 100
+    route.ts --> index.ts: send result 100
+    index.ts --> SignUp.tsx: send result 100
+end
+
+@enduml
