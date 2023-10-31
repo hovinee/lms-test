@@ -32,10 +32,12 @@ const userSchema = new Schema<UserModel>(
     isVerified: {
       type: Boolean,
       required: false,
+      default: false,
     },
     validationCode: {
       type: Number,
       required: false,
+      default: 0,
     },
   },
   { timestamps: true },

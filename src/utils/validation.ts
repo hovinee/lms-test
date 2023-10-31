@@ -1,7 +1,7 @@
 import { UserModel } from '@models/user'
 import Joi from 'joi'
 
-export const loginSchema = Joi.object({
+export const loginSchema = Joi.object<UserModel>({
   email: Joi.string()
     .email({
       minDomainSegments: 2,
@@ -12,11 +12,12 @@ export const loginSchema = Joi.object({
 })
 
 export const registerSchema = loginSchema.keys({
-  userName: Joi.string()
+  name: Joi.string()
     .min(2)
-    .max(12)
+    .max(20)
     .pattern(new RegExp(/^[ㄱ-ㅎ|가-힣|a-z|A-Z|0-9]+$/))
     .required(),
+  job: Joi.string().valid('s', 't').required(),
 })
 
 export function validateUserRegister(user: UserModel) {
