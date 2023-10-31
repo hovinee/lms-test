@@ -1,8 +1,8 @@
 import { createTransport } from 'nodemailer'
 
-export const sendConfirmationMailTo = (email: string, code: number) => {
+export const sendValidationMailTo = (email: string, code: number) => {
   const context =
-    'Hello.\nSomeone just signed up for Ducogen mplatform using this email address.\nIf this is you, enter the following code to verify your email.\ncode:'
+    'Hello.\nSomeone just signed up for Ducogen using this email address.\nIf this is you, enter the following code to verify your email.\ncode:'
 
   const mailOptions = {
     from: '"ducogen kkpark@ducowise.com"', // 발신자 이메일
