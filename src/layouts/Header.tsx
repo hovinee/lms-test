@@ -18,7 +18,7 @@ const Header = () => {
         <>
           <LeftArrow />
           <CSText weight="normal" size="16" color="171717">
-            강좌등록 페이지
+            강좌등록 페이지입니다
           </CSText>
         </>
       ) : (
