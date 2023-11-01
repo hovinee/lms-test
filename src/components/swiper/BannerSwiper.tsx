@@ -10,10 +10,10 @@ import 'swiper/css/pagination'
 // import required modules
 import { Pagination, Autoplay } from 'swiper/modules'
 import './style.css'
-import Image from 'next/image'
 import CSText from '../ui/text/CSText'
 import { motion } from 'framer-motion'
 import { useState } from 'react'
+import AutoSizeImage from '@components/ui/auto-size-image/AutoSizeImage'
 
 const courses = [
   {
@@ -62,11 +62,7 @@ const BannerSwiper = () => {
               animate={{ scale: slideIndex === index ? 1.1 : 1 }}
               transition={{ duration: 5 }}
             >
-              <motion.img
-                src={course.src}
-                alt={'digital-literacy'}
-                className="h-[22rem] w-full object-cover"
-              />
+              <AutoSizeImage src={course.src} className="h-[22rem] w-full" />
             </motion.div>
             <div className="text-wh absolute bottom-0 left-0 right-0 top-0 flex flex-col items-center justify-center bg-black bg-opacity-20">
               <CSText weight={'bold'} size={'21'} color={'white'}>

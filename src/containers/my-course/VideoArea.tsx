@@ -1,15 +1,13 @@
 'use client'
 
 // Import Swiper React components
-import { Swiper, SwiperSlide } from 'swiper/react'
-import { useQuery } from '@tanstack/react-query'
-import { useEffect, useState } from 'react'
-import { getVideos } from 'app/my-course/[slug]/page'
-import VideoPlayer from '@components/ui/video-player/VideoPlayer'
-import CSText from '@components/ui/text/CSText'
-import Section from '@components/ui/section/Section'
 import CSButton from '@components/ui/button/CSButton'
+import Section from '@components/ui/section/Section'
+import CSText from '@components/ui/text/CSText'
+import { useQuery } from '@tanstack/react-query'
+import { getVideos } from 'app/my-course/[slug]/page'
 import { AnimatePresence, motion } from 'framer-motion'
+import { useState } from 'react'
 
 import Video from '@components/ui/video-player/Video'
 

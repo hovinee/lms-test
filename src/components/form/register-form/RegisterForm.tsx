@@ -9,13 +9,6 @@ import CSInput from '@components/ui/input/CSInput'
 import CSButton from '@components/ui/button/CSButton'
 import ProfessorOrStudent from './ProfessorOrStudent'
 
-interface VerificationCode {
-  one?: string
-  two?: string
-  three?: string
-  four?: string
-}
-
 const SignUpForm = () => {
   const router = useRouter()
   const [name, setName] = useState<string>('')
@@ -110,7 +103,7 @@ const SignUpForm = () => {
           size="14"
           weight="normal"
           color="171717"
-          className="font-inter mb-[0.9rem] mt-[3.6rem]"
+          className="mb-[0.9rem] mt-[3.6rem] font-inter"
         >
           이름
         </CSText>
@@ -119,7 +112,7 @@ const SignUpForm = () => {
           size="14"
           weight="normal"
           color="171717"
-          className="font-inter mb-[0.9rem] mt-[3.6rem]"
+          className="mb-[0.9rem] mt-[3.6rem] font-inter"
         >
           이메일
         </CSText>
@@ -128,7 +121,7 @@ const SignUpForm = () => {
           size="14"
           weight="normal"
           color="171717"
-          className="font-inter mb-[0.9rem] mt-[2.7rem]"
+          className="mb-[0.9rem] mt-[2.7rem] font-inter"
         >
           비밀번호
         </CSText>

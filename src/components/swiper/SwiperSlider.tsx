@@ -8,11 +8,10 @@ import 'swiper/css'
 import 'swiper/css/pagination'
 
 // import required modules
-import { Pagination } from 'swiper/modules'
 import './style.css'
 import CSText from '../ui/text/CSText'
 import Link from 'next/link'
-import AutoSizeImage from '../ui/auto-size-image/AutoSizeImage'
+import AutoSizeImage from '@components/ui/auto-size-image/AutoSizeImage'
 
 const courses = [
   { title: '디지털 리터러시란?' },
@@ -27,11 +26,10 @@ export default () => {
       {courses.map((value, index) => (
         <SwiperSlide key={index}>
           <Link href={`/lecture/${1}`}>
-            <img
-              src="images/digital-literacy-1.png"
-              alt="digital-literacy-1"
-              loading="lazy"
-              className="h-auto w-full rounded-t-[0.6rem]"
+            <AutoSizeImage
+              src="/images/digital-literacy-1.png"
+              className="h-[9.6rem] w-full"
+              roundedTop="0.6"
             />
 
             <div className="border-black-10 rounded-b-[0.6rem] border-x border-b p-[0.8rem]">

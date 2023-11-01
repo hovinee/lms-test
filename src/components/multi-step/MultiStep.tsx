@@ -1,5 +1,4 @@
 import CSText from '@components/ui/text/CSText'
-import { Dispatch, SetStateAction } from 'react'
 
 interface Props {
   step: number[]

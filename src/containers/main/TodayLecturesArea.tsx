@@ -1,7 +1,7 @@
 import CSText from '@components/ui/text/CSText'
-import VideoSwiperSlider from '@components/swiper/VideoSwiperSlider'
 import Section from '@components/ui/section/Section'
 import Image from 'next/image'
+import AutoSizeImage from '@components/ui/auto-size-image/AutoSizeImage'
 
 const TodayCourseArea = () => {
   return (
@@ -10,14 +10,11 @@ const TodayCourseArea = () => {
         {'오늘의 추천 강의'}
       </CSText>
 
-      <div className="relative mt-[0.9rem] h-[16.5rem] w-full">
-        <Image
-          src={'/images/school.jpg'}
-          fill
-          className="object-cover"
-          alt=""
-        />
-      </div>
+      <AutoSizeImage
+        src={'/images/school.jpg'}
+        className="mt-[0.9rem] h-[16.5rem] w-full"
+      />
+
       <CSText
         size={'14'}
         color={'black'}
@@ -26,8 +23,6 @@ const TodayCourseArea = () => {
       >
         {'추천 강좌: 심리상담 전 알아야 할 것'}
       </CSText>
-
-      {/* <VideoSwiperSlider/> */}
     </Section>
   )
 }
