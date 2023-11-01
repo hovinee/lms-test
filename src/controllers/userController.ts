@@ -1,5 +1,6 @@
 import User, { UserModel } from '@models/user'
 import ResponseHelper from '@utils/ResponseHelper'
+import bcrypt from 'bcrypt'
 import { validateUserRegister } from '@utils/validation'
 import { NextRequest } from 'next/server'
 import { sendValidationMailTo } from 'services/mailService'
@@ -21,6 +22,9 @@ export const registerUser = async (req: NextRequest) => {
     if (!reqData) return ResponseHelper.error('invalid json format')
 
     const newUser: UserModel = reqData
+    const hash = await bcrypt.hash(newUser.password, 10)
+    newUser.password = hash
+
     // 인풋 정보가 스키마를 위반한 경우.
     const { error } = validateUserRegister(newUser)
     if (error) return ResponseHelper.error('invalid input data')

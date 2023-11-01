@@ -7,6 +7,7 @@ export interface UserModel {
   job: string
   isVerified?: boolean
   validationCode?: number
+  history?: string
 }
 
 const userSchema = new Schema<UserModel>(
@@ -38,6 +39,10 @@ const userSchema = new Schema<UserModel>(
       type: Number,
       required: false,
       default: 0,
+    },
+    history: {
+      type: String,
+      required: false,
     },
   },
   { timestamps: true },
