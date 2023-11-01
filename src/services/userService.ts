@@ -12,5 +12,6 @@ export const insertUser = async (user: UserModel) => {
     ...user,
     isVerified: false,
     validationCode: 0,
+    history: '',
   }).save()
 }
