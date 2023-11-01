@@ -20,7 +20,7 @@ const courses = [
   { title: '혼자서 할때 주의할 점' },
 ]
 
-export default () => {
+const SwiperSlider = () => {
   return (
     <Swiper spaceBetween={8} slidesPerView={2} className="bullet">
       {courses.map((value, index) => (
@@ -51,3 +51,5 @@ export default () => {
     </Swiper>
   )
 }
+
+export default SwiperSlider

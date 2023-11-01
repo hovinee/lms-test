@@ -4,8 +4,8 @@
 import CSButton from '@components/ui/button/CSButton'
 import Section from '@components/ui/section/Section'
 import CSText from '@components/ui/text/CSText'
-import { useQuery } from '@tanstack/react-query'
-import { getVideos } from 'app/my-course/[slug]/page'
+// import { useQuery } from '@tanstack/react-query'
+// import { getVideos } from 'app/my-course/[slug]/page'
 import { AnimatePresence, motion } from 'framer-motion'
 import { useState } from 'react'
 
@@ -33,7 +33,7 @@ const getVideoInfo = [
 ]
 
 const VideoArea = () => {
-  const { data } = useQuery({ queryKey: ['get-video'], queryFn: getVideos })
+  // const { data } = useQuery({ queryKey: ['get-video'], queryFn: getVideos })
   const [selectedTab, setSelectedTab] = useState(tabs[0])
   const [videoSource, setVideoSource] = useState([
     {
